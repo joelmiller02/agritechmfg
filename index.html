@@ -49,12 +49,11 @@ header{
   transition: background 0.2s, color 0.2s;
 }
 
+/* ---- Hero Section ---- */
 .hero{
   height:50vh;
-  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-  url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwcngg.com%2Fwp-content%2Fuploads%2F2021%2F08%2F2-2-2-WalCCFig2-by-Janine-Hasey-UCCE-Emeritus.jpg&f=1&nofb=1&ipt=be4a04f7216e50b6a059f73ddede02305d0f8375a931ad3aa3b388e5dba15e1f");
-  background-size:cover;
-  background-position:center;
+  background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+              url("CoverCrop1.jpeg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -69,6 +68,22 @@ header{
 
 .hero p{
   font-size:20px;
+}
+
+/* ---- Secondary background for below hero ---- */
+.background-section{
+  background: url("CoverCrop2.jpeg") center/cover no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh; /* extends to footer area */
+}
+
+/* ---- Content wrapper with overlay for readability ---- */
+.background-overlay{
+  background: rgba(255,255,255,0.9); /* light overlay for text readability */
+  padding: 70px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .section{
@@ -93,20 +108,20 @@ header{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  height:100%;           /* ensures all cards stretch the same in the grid */
+  height:100%;
 }
 
 .card img{
   width:100%;
-  height:200px;        /* fixed height for all images */
-  object-fit:contain;   /* fully visible */
+  height:200px;        
+  object-fit:contain;
   border-bottom:1px solid #ddd;
 }
 
 .card-content{
   display:flex;
   flex-direction:column;
-  flex-grow:1;          /* fills remaining space so button is pushed to bottom */
+  flex-grow:1;
   justify-content:space-between;
   width:100%;
   padding:15px;
@@ -135,7 +150,7 @@ header{
   color:white;
   text-decoration:none;
   border-radius:4px;
-  margin-top:auto;     /* pushes button to bottom of card-content */
+  margin-top:auto;
 }
 
 .about{
@@ -180,86 +195,79 @@ footer{
 
 <a id="top"></a>
 
+<!-- Hero with first image -->
 <section class="hero">
-
   <div>
     <h1>Built for Modern Agriculture</h1>
     <p>Precision manufacturing for high-performance ag equipment.</p>
   </div>
-
 </section>
 
-<section class="section" id="products">
+<!-- Background image 2 -->
+<div class="background-section">
+  <div class="background-overlay">
 
-  <h2>Products</h2>
-
-  <div class="products">
-
-    <div class="card">
-      <img src="RCP-5 (A).png" alt="RCP-5">
-      <div class="card-content">
-        <h3>RCP-5</h3>
-        <p>Compact 5FT 3-Point Cover Crop Crimper.</p>
-        <a class="button" href="#">Learn More</a>
+    <!-- Products Section -->
+    <section class="section" id="products">
+      <h2>Products</h2>
+      <div class="products">
+        <div class="card">
+          <img src="RCP-5 (A).png" alt="RCP-5">
+          <div class="card-content">
+            <h3>RCP-5</h3>
+            <p>Compact 5FT 3-Point Cover Crop Crimper.</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="RCP-12 (A).png" alt="RCP-12">
+          <div class="card-content">
+            <h3>RCP-12</h3>
+            <p>12FT 3-Point Cover Crop Crimper.</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="RCP-13F (F).png" alt="RCP-13F">
+          <div class="card-content">
+            <h3>RCP-13F</h3>
+            <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing.</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="RC-8S (A).png" alt="RC-8S">
+          <div class="card-content">
+            <h3>RC-8S</h3>
+            <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset.</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <img src="RCP-12 (A).png" alt="RCP-12">
-      <div class="card-content">
-        <h3>RCP-12</h3>
-        <p>12FT 3-Point Cover Crop Crimper.</p>
-        <a class="button" href="#">Learn More</a>
-      </div>
-    </div>
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <h2>About Us</h2>
+      <p>
+        AgriTech Manufacturing produces precision-built agricultural components
+        designed for durability, efficiency, and reliability in demanding field conditions.
+        Our equipment is engineered to support modern farming operations with
+        robust construction and practical design.
+      </p>
+    </section>
 
-    <div class="card">
-      <img src="RCP-13F (F).png" alt="RCP-13F">
-      <div class="card-content">
-        <h3>RCP-13F</h3>
-        <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing.</p>
-        <a class="button" href="#">Learn More</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="RC-8S (A).png" alt="RC-8S">
-      <div class="card-content">
-        <h3>RC-8S</h3>
-        <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset.</p>
-        <a class="button" href="#">Learn More</a>
-      </div>
-    </div>
+    <!-- Contact Section -->
+    <section class="section about" id="contact">
+      <h2>Contact</h2>
+      <p>Email: sales@agritechmfg.com</p>
+    </section>
 
   </div>
-
-</section>
-
-<section class="section about" id="about">
-
-  <h2>About Us</h2>
-
-  <p>
-    AgriTech Manufacturing produces precision-built agricultural components
-    designed for durability, efficiency, and reliability in demanding field conditions.
-    Our equipment is engineered to support modern farming operations with
-    robust construction and practical design.
-  </p>
-
-</section>
-
-<section class="section about" id="contact">
-
-  <h2>Contact</h2>
-
-  <p>Email: sales@agritechmfg.com</p>
-
-</section>
+</div>
 
 <footer>
-
 © 2026 AgriTech Manufacturing
-
 </footer>
 
 </body>
