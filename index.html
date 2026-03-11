@@ -82,45 +82,40 @@ header{
   gap:25px;
 }
 
-/* ---- Product Cards with background images ---- */
+/* ---- Product Cards with images ---- */
 .card{
   border-radius:6px;
-  padding:25px;
-  position:relative;
   overflow:hidden;
-  color:white;
+  background:#f5f5f5;
   transition:.2s;
-  min-height:250px;
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
+  align-items:center;
+  text-align:center;
 }
 
-.card::before{
-  content:'';
-  position:absolute;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.4); /* dark overlay for readability */
-  z-index:0;
-  border-radius:6px;
+.card img{
+  width:100%;
+  height:auto;      /* maintain aspect ratio */
+  object-fit:contain; /* ensures entire image is visible */
+  border-bottom:1px solid #ddd;
 }
 
-.card h3, .card p, .card a{
-  position: relative;
-  z-index:1;
-  margin:0;
+.card h3{
+  margin:15px 0 5px 0;
+  font-size:1.2rem;
+  color:#333;
+}
+
+.card p{
+  margin:0 0 10px 0;
+  color:#555;
 }
 
 .card:hover{
   transform: translateY(-5px);
   box-shadow:0 6px 16px rgba(0,0,0,.15);
 }
-
-/* ---- Specific backgrounds for each product ---- */
-.card.rcp5 { background: url('RCP-5 (A).png') center/cover no-repeat; }
-.card.rcp12 { background: url('RCP-12 (B).png') center/cover no-repeat; }
-.card.rcp13f { background: url('RCP-13F (F).png') center/cover no-repeat; }
-.card.rc8s { background: url('RC-8S (A).png') center/cover no-repeat; }
 
 .button{
   display:inline-block;
@@ -129,7 +124,7 @@ header{
   color:white;
   text-decoration:none;
   border-radius:4px;
-  margin-top:10px;
+  margin-bottom:15px;
 }
 
 .about{
@@ -188,25 +183,29 @@ footer{
 
   <div class="products">
 
-    <div class="card rcp5">
+    <div class="card">
+      <img src="RCP-5 (A).png" alt="RCP-5">
       <h3>RCP-5</h3>
       <p>Compact 5FT 3-Point Cover Crop Crimper.</p>
       <a class="button" href="#">Learn More</a>
     </div>
 
-    <div class="card rcp12">
+    <div class="card">
+      <img src="RCP-12 (B).png" alt="RCP-12">
       <h3>RCP-12</h3>
       <p>12FT 3-Point Cover Crop Crimper.</p>
       <a class="button" href="#">Learn More</a>
     </div>
 
-    <div class="card rcp13f">
+    <div class="card">
+      <img src="RCP-13F (F).png" alt="RCP-13F">
       <h3>RCP-13F</h3>
       <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing.</p>
       <a class="button" href="#">Learn More</a>
     </div>
 
-    <div class="card rc8s">
+    <div class="card">
+      <img src="RC-8S (A).png" alt="RC-8S">
       <h3>RC-8S</h3>
       <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset.</p>
       <a class="button" href="#">Learn More</a>
