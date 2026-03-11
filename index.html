@@ -82,20 +82,45 @@ header{
   gap:25px;
 }
 
+/* ---- Product Cards with background images ---- */
 .card{
-  border:1px solid #ddd;
-  padding:25px;
   border-radius:6px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+  color:white;
   transition:.2s;
+  min-height:250px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.4); /* dark overlay for readability */
+  z-index:0;
+  border-radius:6px;
+}
+
+.card h3, .card p, .card a{
+  position: relative;
+  z-index:1;
+  margin:0;
 }
 
 .card:hover{
+  transform: translateY(-5px);
   box-shadow:0 6px 16px rgba(0,0,0,.15);
 }
 
-.card h3{
-  margin-top:0;
-}
+/* ---- Specific backgrounds for each product ---- */
+.card.rcp5 { background: url('RCP-5 (A).png') center/cover no-repeat; }
+.card.rcp12 { background: url('RCP-12 (B).png') center/cover no-repeat; }
+.card.rcp13f { background: url('RCP-13F (F).png') center/cover no-repeat; }
+.card.rc8s { background: url('RC-8S (A).png') center/cover no-repeat; }
 
 .button{
   display:inline-block;
@@ -109,6 +134,11 @@ header{
 
 .about{
   background:#f5f5f5;
+}
+
+/* ---- Add 0.5in gap below About Us ---- */
+#about {
+  margin-bottom: 0.5in;
 }
 
 footer{
@@ -152,32 +182,31 @@ footer{
 
 </section>
 
-<!-- Products Section comes first now -->
 <section class="section" id="products">
 
   <h2>Products</h2>
 
   <div class="products">
 
-    <div class="card">
+    <div class="card rcp5">
       <h3>RCP-5</h3>
       <p>Compact 5FT 3-Point Cover Crop Crimper.</p>
       <a class="button" href="#">Learn More</a>
     </div>
 
-    <div class="card">
+    <div class="card rcp12">
       <h3>RCP-12</h3>
       <p>12FT 3-Point Cover Crop Crimper.</p>
       <a class="button" href="#">Learn More</a>
     </div>
 
-    <div class="card">
+    <div class="card rcp13f">
       <h3>RCP-13F</h3>
       <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing.</p>
       <a class="button" href="#">Learn More</a>
     </div>
 
-    <div class="card">
+    <div class="card rc8s">
       <h3>RC-8S</h3>
       <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset.</p>
       <a class="button" href="#">Learn More</a>
@@ -187,7 +216,6 @@ footer{
 
 </section>
 
-<!-- About Us Section moved below Products -->
 <section class="section about" id="about">
 
   <h2>About Us</h2>
@@ -199,8 +227,6 @@ footer{
     robust construction and practical design.
   </p>
 
-  margin-bottom: 0.5in;
-  
 </section>
 
 <section class="section about" id="contact">
@@ -218,5 +244,4 @@ footer{
 </footer>
 
 </body>
-
 </html>
