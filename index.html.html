@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AgriTech Manufacturing</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:#333;
+}
+
+header{
+background:white;
+border-bottom:1px solid #ddd;
+position:sticky;
+top:0;
+box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+}
+
+.logo img{
+height:55px;
+width:auto;
+}
+
+.nav a{
+text-decoration:none;
+margin-left:25px;
+color:#333;
+font-weight:bold;
+}
+
+.hero{
+height:70vh;
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1500382017468-9049fed747ef");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:70px 20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+border:1px solid #ddd;
+padding:25px;
+border-radius:6px;
+transition:.2s;
+}
+
+.card:hover{
+box-shadow:0 6px 16px rgba(0,0,0,.15);
+}
+
+.card h3{
+margin-top:0;
+}
+
+.button{
+display:inline-block;
+padding:10px 18px;
+background:#2b5a7a;
+color:white;
+text-decoration:none;
+border-radius:4px;
+margin-top:10px;
+}
+
+.about{
+background:#f5f5f5;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+<img src="AgriTech_Logo.png" alt="AgriTech Manufacturing Logo">
+</div>
+
+<div>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div>
+<h1>Built for Modern Agriculture</h1>
+<p>Precision manufacturing for high-performance ag equipment.</p>
+</div>
+
+</section>
+
+<section class="section about" id="about">
+
+<h2>About Us</h2>
+
+<p>
+AgriTech Manufacturing produces precision-built agricultural components
+designed for durability, efficiency, and reliability in demanding field conditions.
+Our equipment is engineered to support modern farming operations with
+robust construction and practical design.
+</p>
+
+</section>
+
+<section class="section" id="products">
+
+<h2>Products</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>RCP-5</h3>
+<p>Compact row crop platform designed for smaller operations.</p>
+<a class="button" href="#">Learn More</a>
+</div>
+
+<div class="card">
+<h3>RCP-12</h3>
+<p>High-capacity platform engineered for durability and performance.</p>
+<a class="button" href="#">Learn More</a>
+</div>
+
+<div class="card">
+<h3>RCP-13F</h3>
+<p>Reinforced frame platform designed for demanding field conditions.</p>
+<a class="button" href="#">Learn More</a>
+</div>
+
+<div class="card">
+<h3>RC-8S</h3>
+<p>Heavy-duty agricultural component engineered for reliability.</p>
+<a class="button" href="#">Learn More</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="section about" id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: sales@agritechmfg.com</p>
+<p>Phone: (your phone number)</p>
+
+</section>
+
+<footer>
+
+© 2026 AgriTech Manufacturing
+
+</footer>
+
+</body>
+
+</html>
