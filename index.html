@@ -16,8 +16,8 @@ body{
 }
 
 header{
-  background:white;
-  border-bottom:1px solid #ddd;
+  background:#222; /* dark header like footer */
+  border-bottom:1px solid #111;
   position:sticky;
   top:0;
   box-shadow:0 2px 6px rgba(0,0,0,.05);
@@ -41,7 +41,7 @@ header{
 .nav a{
   text-decoration:none;
   margin-left:25px;
-  color:#333;
+  color:white; /* changed text to white for dark header */
   font-weight:bold;
   font-size: 1.2rem;
   padding: 10px 15px;
@@ -49,7 +49,10 @@ header{
   transition: background 0.2s, color 0.2s;
 }
 
-/* ---- Hero Section ---- */
+.nav a:hover{
+  background:#444; /* subtle hover effect */
+}
+
 .hero{
   height:50vh;
   background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
@@ -68,22 +71,6 @@ header{
 
 .hero p{
   font-size:20px;
-}
-
-/* ---- Secondary background for below hero ---- */
-.background-section{
-  background: url("CoverCrop2.jpeg") center/cover no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 100vh; /* extends to footer area */
-}
-
-/* ---- Content wrapper with overlay for readability ---- */
-.background-overlay{
-  background: rgba(255,255,255,0.9); /* light overlay for text readability */
-  padding: 70px 20px;
-  max-width:1100px;
-  margin:auto;
 }
 
 .section{
@@ -203,68 +190,61 @@ footer{
   </div>
 </section>
 
-<!-- Background image 2 -->
-<div class="background-section">
-  <div class="background-overlay">
-
-    <!-- Products Section -->
-    <section class="section" id="products">
-      <h2>Products</h2>
-      <div class="products">
-        <div class="card">
-          <img src="RCP-5 (A).png" alt="RCP-5">
-          <div class="card-content">
-            <h3>RCP-5</h3>
-            <p>Compact 5FT 3-Point Cover Crop Crimper</p>
-            <a class="button" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="RCP-12 (A).png" alt="RCP-12">
-          <div class="card-content">
-            <h3>RCP-12</h3>
-            <p>12FT 3-Point Cover Crop Crimper</p>
-            <a class="button" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="RCP-13F (F).png" alt="RCP-13F">
-          <div class="card-content">
-            <h3>RCP-13F</h3>
-            <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing</p>
-            <a class="button" href="#">Learn More</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="RC-8S (A).png" alt="RC-8S">
-          <div class="card-content">
-            <h3>RC-8S</h3>
-            <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset</p>
-            <a class="button" href="#">Learn More</a>
-          </div>
-        </div>
+<!-- Products Section -->
+<section class="section" id="products">
+  <h2>Products</h2>
+  <div class="products">
+    <div class="card">
+      <img src="RCP-5 (A).png" alt="RCP-5">
+      <div class="card-content">
+        <h3>RCP-5</h3>
+        <p>Compact 5FT 3-Point Cover Crop Crimper</p>
+        <a class="button" href="#">Learn More</a>
       </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-      <h2>About Us</h2>
-      <p>
-        AgriTech Manufacturing produces precision-built agricultural components
-        designed for durability, efficiency, and reliability in demanding field conditions.
-        Our equipment is engineered to support modern farming operations with
-        robust construction and practical design.
-      </p>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section about" id="contact">
-      <h2>Contact</h2>
-      <p>Email: sales@agritechmfg.com</p>
-    </section>
-
+    </div>
+    <div class="card">
+      <img src="RCP-12 (A).png" alt="RCP-12">
+      <div class="card-content">
+        <h3>RCP-12</h3>
+        <p>12FT 3-Point Cover Crop Crimper</p>
+        <a class="button" href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="RCP-13F (F).png" alt="RCP-13F">
+      <div class="card-content">
+        <h3>RCP-13F</h3>
+        <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing</p>
+        <a class="button" href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="RC-8S (A).png" alt="RC-8S">
+      <div class="card-content">
+        <h3>RC-8S</h3>
+        <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset</p>
+        <a class="button" href="#">Learn More</a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- About Section -->
+<section class="section about" id="about">
+  <h2>About Us</h2>
+  <p>
+    AgriTech Manufacturing produces precision-built agricultural components
+    designed for durability, efficiency, and reliability in demanding field conditions.
+    Our equipment is engineered to support modern farming operations with
+    robust construction and practical design.
+  </p>
+</section>
+
+<!-- Contact Section -->
+<section class="section about" id="contact">
+  <h2>Contact</h2>
+  <p>Email: sales@agritechmfg.com</p>
+</section>
 
 <footer>
 © 2026 AgriTech Manufacturing
