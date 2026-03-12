@@ -9,6 +9,10 @@
 
 <style>
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
@@ -42,6 +46,17 @@ header{
   color:white;
   font-weight:bold;
   font-size:1.2rem;
+  padding:6px 10px;
+  border-radius:4px;
+  transition:all .2s ease;
+}
+
+.nav a:hover{
+  color:#cc961d;
+}
+
+.nav a.active{
+  color:#cc961d;
 }
 
 .hero{
@@ -119,8 +134,6 @@ header{
   color:#eee;
 }
 
-/* BETTER BUTTON UX */
-
 .button{
   display:inline-block;
   padding:15px 28px;
@@ -134,15 +147,11 @@ header{
   transition:all .2s ease;
 }
 
-/* Hover effect */
-
 .button:hover{
   background:#1f4a63;
   transform:translateY(-2px);
   box-shadow:0 4px 12px rgba(0,0,0,.3);
 }
-
-/* Click effect */
 
 .button:active{
   transform:translateY(1px);
@@ -153,6 +162,10 @@ header{
   background:#ccc;
   border-radius:12px;
   padding:30px 20px;
+}
+
+#about{
+  margin-bottom:0.5in;
 }
 
 footer{
@@ -177,10 +190,10 @@ footer{
 </div>
 
 <div>
-<a href="#top">Home</a>
-<a href="#products">Products</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<a href="#top" id="nav-home">Home</a>
+<a href="#products" id="nav-products">Products</a>
+<a href="#about" id="nav-about">About</a>
+<a href="#contact" id="nav-contact">Contact</a>
 </div>
 
 </div>
@@ -262,6 +275,44 @@ AgriTech Manufacturing produces precision-built agricultural components designed
 <footer>
 © 2026 AgriTech Manufacturing
 </footer>
+
+<script>
+
+const sections = [
+  {id: "top", nav: "nav-home"},
+  {id: "products", nav: "nav-products"},
+  {id: "about", nav: "nav-about"},
+  {id: "contact", nav: "nav-contact"}
+];
+
+function setActive() {
+
+  let scrollPos = window.scrollY + 150;
+
+  sections.forEach(section => {
+
+    const el = document.getElementById(section.id);
+    const navLink = document.getElementById(section.nav);
+
+    if (!el || !navLink) return;
+
+    const top = el.offsetTop;
+    const bottom = top + el.offsetHeight;
+
+    if (scrollPos >= top && scrollPos < bottom) {
+
+      document.querySelectorAll(".nav a").forEach(a => a.classList.remove("active"));
+
+      navLink.classList.add("active");
+
+    }
+
+  });
+}
+
+window.addEventListener("scroll", setActive);
+
+</script>
 
 </body>
 </html>
