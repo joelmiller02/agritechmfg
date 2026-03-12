@@ -69,11 +69,45 @@ header{
   text-align:center;
 }
 
-.product-page img{
+/* SLIDESHOW */
+
+.slideshow-container{
+  position:relative;
   max-width:600px;
-  width:100%;
   margin:20px auto;
+}
+
+.slideshow-container img{
+  width:100%;
   display:block;
+}
+
+/* arrows */
+
+.slide-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:40px;
+  font-weight:bold;
+  color:white;
+  background:rgba(0,0,0,0.5);
+  padding:8px 14px;
+  cursor:pointer;
+  user-select:none;
+  border-radius:6px;
+}
+
+.slide-arrow:hover{
+  background:rgba(0,0,0,0.8);
+}
+
+.arrow-left{
+  left:-50px;
+}
+
+.arrow-right{
+  right:-50px;
 }
 
 .product-page h1{
@@ -136,7 +170,15 @@ footer{
 
 <h1>RCP-5 Cover Crop Crimper</h1>
 
-<img src="RCP-5 (A).png" alt="RCP-5">
+<div class="slideshow-container">
+
+<div class="slide-arrow arrow-left" onclick="changeSlide(-1)">&#10094;</div>
+
+<img id="product-slide" src="RCP-5 (A).png" alt="RCP-5">
+
+<div class="slide-arrow arrow-right" onclick="changeSlide(1)">&#10095;</div>
+
+</div>
 
 <p>
 The RCP-5 is a compact 5-foot 3-point mounted cover crop crimper designed specifically for vineyards.
@@ -178,6 +220,33 @@ navLinks.forEach(link => {
 /* Default highlight Products since this page is a product page */
 
 document.getElementById("nav-products").classList.add("active");
+
+
+/* SLIDESHOW */
+
+const images = [
+"RCP-5 (A).png",
+"RCP-5 (B).png",
+"RCP-5 (C).png"
+];
+
+let currentSlide = 0;
+
+function changeSlide(direction){
+
+  currentSlide += direction;
+
+  if(currentSlide >= images.length){
+    currentSlide = 0;
+  }
+
+  if(currentSlide < 0){
+    currentSlide = images.length - 1;
+  }
+
+  document.getElementById("product-slide").src = images[currentSlide];
+
+}
 
 </script>
 
