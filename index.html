@@ -35,6 +35,7 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:2px 20px;
+  flex-wrap:wrap; /* allow wrapping on small screens */
 }
 
 .logo img{
@@ -207,6 +208,7 @@ header{
   font-size:18px;
   justify-content:flex-start;
   padding-left:2in;
+  flex-wrap:wrap; /* allow wrapping on small screens */
 }
 
 .contact-row svg{
@@ -237,6 +239,73 @@ footer{
   color:white;
   text-align:center;
   padding:25px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+  .nav{
+    justify-content:center;
+  }
+
+  .nav a{
+    margin:5px 10px;
+    font-size:1rem;
+  }
+
+  .logo img{
+    height:80px;
+    margin-bottom:10px;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:1.2rem;
+    margin-top:0.2in;
+  }
+
+  .products-header-bar h2{
+    font-size:2rem;
+  }
+
+  .products{
+    grid-template-columns:1fr; /* stack cards vertically */
+    gap:15px;
+  }
+
+  .card img{
+    height:180px;
+  }
+
+  .card h3{
+    font-size:1.2rem;
+  }
+
+  .card p{
+    font-size:1rem;
+  }
+
+  .button{
+    padding:10px 20px;
+    font-size:0.9rem;
+  }
+
+  .about{
+    padding:20px 15px;
+  }
+
+  .contact-row{
+    padding-left:0.25in;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+    font-size:16px;
+  }
+
 }
 
 </style>
