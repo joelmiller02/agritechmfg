@@ -25,6 +25,7 @@ header{
   border-bottom:1px solid #111;
   position:sticky;
   top:0;
+  z-index:1000;
 }
 
 .nav{
@@ -80,7 +81,7 @@ header{
   padding:70px 20px;
 }
 
-.products-header-bar {
+.products-header-bar{
   max-width:1100px;
   background:#ccc;
   border-radius:12px;
@@ -89,7 +90,7 @@ header{
   text-align:center;
 }
 
-.products-container {
+.products-container{
   max-width:1100px;
   margin:auto;
   padding:0 20px;
@@ -278,39 +279,37 @@ AgriTech Manufacturing produces precision-built agricultural components designed
 
 <script>
 
-const sections = [
-  {id: "top", nav: "nav-home"},
-  {id: "products", nav: "nav-products"},
-  {id: "about", nav: "nav-about"},
-  {id: "contact", nav: "nav-contact"}
-];
+const navLinks = {
+  top: document.getElementById("nav-home"),
+  products: document.getElementById("nav-products"),
+  about: document.getElementById("nav-about"),
+  contact: document.getElementById("nav-contact")
+};
 
-function setActive() {
+const sections = document.querySelectorAll("section, #top");
 
-  let scrollPos = window.scrollY + 150;
+const observer = new IntersectionObserver(entries => {
 
-  sections.forEach(section => {
+  entries.forEach(entry => {
 
-    const el = document.getElementById(section.id);
-    const navLink = document.getElementById(section.nav);
+    if(entry.isIntersecting){
 
-    if (!el || !navLink) return;
+      Object.values(navLinks).forEach(link => link.classList.remove("active"));
 
-    const top = el.offsetTop;
-    const bottom = top + el.offsetHeight;
-
-    if (scrollPos >= top && scrollPos < bottom) {
-
-      document.querySelectorAll(".nav a").forEach(a => a.classList.remove("active"));
-
-      navLink.classList.add("active");
+      if(entry.target.id === "products") navLinks.products.classList.add("active");
+      if(entry.target.id === "about") navLinks.about.classList.add("active");
+      if(entry.target.id === "contact") navLinks.contact.classList.add("active");
+      if(entry.target.id === "top" || entry.target.classList.contains("hero")) navLinks.top.classList.add("active");
 
     }
 
   });
-}
 
-window.addEventListener("scroll", setActive);
+},{
+  threshold:0.5
+});
+
+sections.forEach(section => observer.observe(section));
 
 </script>
 
