@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>RCP-5 | AgriTech Manufacturing</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#222;
+color:white;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+}
+
+img{
+width:100%;
+max-width:600px;
+display:block;
+margin:auto;
+}
+
+.button{
+display:inline-block;
+padding:12px 24px;
+background:#2b5a7a;
+color:white;
+text-decoration:none;
+border-radius:4px;
+margin-top:30px;
+}
+
+.button:hover{
+background:#1f4a63;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>RCP-5 Cover Crop Crimper</h1>
+
+<img src="RCP-5 (A).png">
+
+<p>
+The RCP-5 is a compact 5-foot 3-point mounted cover crop crimper designed for smaller tractors and smaller operations.
+</p>
+
+<a class="button" href="index.html#products">Back to Products</a>
+
+</div>
+
+</body>
+</html>
