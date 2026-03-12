@@ -171,6 +171,35 @@ footer{
   padding:25px;
 }
 
+/* ===== MOBILE RESPONSIVE HEADER & FOOTER ===== */
+@media (max-width: 768px) {
+
+  /* Logo centered and nav below */
+  .nav{
+    flex-direction: column; /* stack logo + nav links */
+    align-items: center;
+  }
+
+  .logo img{
+    height:75px; /* smaller for mobile */
+    margin-bottom:10px; /* space below logo */
+  }
+
+  .nav > div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x:auto; /* keep all buttons in one row */
+    width: 100%;
+  }
+
+  .nav a{
+    margin:0 10px;
+    font-size:1rem;
+    white-space:nowrap; /* prevent wrapping */
+  }
+}
+
 </style>
 
 </head>
@@ -195,7 +224,6 @@ footer{
 </div>
 
 </header>
-
 
 <section class="section">
 
@@ -240,11 +268,9 @@ Built with heavy-duty steel construction, it provides reliable termination of co
 
 </section>
 
-
 <footer>
 © 2026 AgriTech Manufacturing
 </footer>
-
 
 <script>
 
