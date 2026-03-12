@@ -13,15 +13,15 @@ body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   color:#333;
-  background:#222; /* dark background for areas outside sections */
+  background:#222;
 }
 
 header{
-  background:#222;  /* dark like footer */
+  background:#222;
   border-bottom:1px solid #111;
   position:sticky;
   top:0;
-  box-shadow:0 2px 6px rgba(0,0,0,.3);
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
 }
 
 .nav{
@@ -42,7 +42,7 @@ header{
 .nav a{
   text-decoration:none;
   margin-left:25px;
-  color:white; /* white for contrast on dark header */
+  color:white;
   font-weight:bold;
   font-size: 1.2rem;
   padding: 10px 15px;
@@ -50,7 +50,6 @@ header{
   transition: background 0.2s, color 0.2s;
 }
 
-/* ---- Hero Section ---- */
 .hero{
   height:50vh;
   background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
@@ -63,7 +62,7 @@ header{
 }
 
 .hero h1{
-  font-size:96px; /* doubled from 48px */
+  font-size:96px;
   margin-bottom:10px;
 }
 
@@ -71,11 +70,33 @@ header{
   font-size:20px;
 }
 
-/* ---- Content Sections ---- */
 .section{
   max-width:1100px;
   margin:auto;
   padding:70px 20px;
+}
+
+/* ---- Products Header Bar ---- */
+.products-header-bar {
+  max-width:1100px;
+  background:#ccc;
+  border-radius:12px;
+  margin:20px auto 40px auto;
+  padding:15px 20px;
+  text-align:center;
+}
+
+.products-header-bar h2{
+  margin:0;
+  color:#222;
+  font-size:2rem;
+}
+
+/* ---- Products Grid ---- */
+.products-container {
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
 }
 
 .products{
@@ -88,7 +109,7 @@ header{
 .card{
   border-radius:6px;
   overflow:hidden;
-  background:#ccc;  /* lighter gray for cards */
+  background:#555;
   transition:.2s;
   display:flex;
   flex-direction:column;
@@ -111,17 +132,18 @@ header{
   justify-content:space-between;
   width:100%;
   padding:15px;
+  align-items:center;
 }
 
 .card h3{
   margin:0 0 5px 0;
   font-size:1.2rem;
-  color:#333;
+  color:#fff;
 }
 
 .card p{
   margin:0 0 10px 0;
-  color:#555;
+  color:#eee;
 }
 
 .card:hover{
@@ -129,23 +151,27 @@ header{
   box-shadow:0 6px 16px rgba(0,0,0,.15);
 }
 
-/* ---- Product Buttons ---- */
+/* ---- Buttons ---- */
 .button{
   display:inline-block;
-  padding:15px 27px; /* 1.5x current 10px 18px */
-  font-size:1.5rem;  /* larger text */
+  padding:15px 27px;
   background:#2b5a7a;
   color:white;
   text-decoration:none;
   border-radius:4px;
   margin-top:auto;
+  width:auto;
+  min-width:120px;
 }
 
-/* ---- About & Contact Sections ---- */
 .about{
-  background:#eee; /* lighter gray than cards */
-  border-radius:10px; /* rounded corners */
-  padding:50px 20px;
+  background:#ccc;
+  border-radius:12px;
+  padding:30px 20px;
+  margin-bottom:0.5in;
+}
+
+#about {
   margin-bottom:0.5in;
 }
 
@@ -191,40 +217,46 @@ footer{
   </div>
 </section>
 
+<!-- Products Header Bar -->
+<div class="products-header-bar">
+  <h2>Products</h2>
+</div>
+
 <!-- Products Section -->
 <section class="section" id="products">
-  <h2>Products</h2>
-  <div class="products">
-    <div class="card">
-      <img src="RCP-5 (A).png" alt="RCP-5">
-      <div class="card-content">
-        <h3>RCP-5</h3>
-        <p>Compact 5FT 3-Point Cover Crop Crimper</p>
-        <a class="button" href="#">Learn More</a>
+  <div class="products-container">
+    <div class="products">
+      <div class="card">
+        <img src="RCP-5 (A).png" alt="RCP-5">
+        <div class="card-content">
+          <h3>RCP-5</h3>
+          <p>Compact 5FT 3-Point Cover Crop Crimper</p> 
+          <a class="button" href="#">Learn More</a>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="RCP-12 (A).png" alt="RCP-12">
-      <div class="card-content">
-        <h3>RCP-12</h3>
-        <p>12FT 3-Point Cover Crop Crimper</p>
-        <a class="button" href="#">Learn More</a>
+      <div class="card">
+        <img src="RCP-12 (A).png" alt="RCP-12">
+        <div class="card-content">
+          <h3>RCP-12</h3>
+          <p>12FT 3-Point Cover Crop Crimper</p> 
+          <a class="button" href="#">Learn More</a>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="RCP-13F (F).png" alt="RCP-13F">
-      <div class="card-content">
-        <h3>RCP-13F</h3>
-        <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing</p>
-        <a class="button" href="#">Learn More</a>
+      <div class="card">
+        <img src="RCP-13F (F).png" alt="RCP-13F">
+        <div class="card-content">
+          <h3>RCP-13F</h3>
+          <p>13FT 3-Point Cover Crop Crimper with Hydraulic Flex Wing</p> 
+          <a class="button" href="#">Learn More</a>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <img src="RC-8S (A).png" alt="RC-8S">
-      <div class="card-content">
-        <h3>RC-8S</h3>
-        <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset</p>
-        <a class="button" href="#">Learn More</a>
+      <div class="card">
+        <img src="RC-8S (A).png" alt="RC-8S">
+        <div class="card-content">
+          <h3>RC-8S</h3>
+          <p>8FT Pull Behind Cover Crop Crimper with 0-3FT Adjustable Offset</p> 
+          <a class="button" href="#">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
