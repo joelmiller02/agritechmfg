@@ -10,37 +10,86 @@
 <style>
 
 body{
-font-family:Arial;
-margin:0;
-background:#222;
-color:white;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#333;
+  background:#222;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
+header{
+  background:#222;
+  border-bottom:1px solid #111;
+  position:sticky;
+  top:0;
 }
 
-img{
-width:100%;
-max-width:600px;
-display:block;
-margin:auto;
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:2px 20px;
+}
+
+.logo img{
+  height:125px;
+}
+
+.nav a{
+  text-decoration:none;
+  margin-left:25px;
+  color:white;
+  font-weight:bold;
+  font-size:1.2rem;
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.product-page{
+  background:#ccc;
+  border-radius:12px;
+  padding:40px;
+  text-align:center;
+}
+
+.product-page img{
+  max-width:600px;
+  width:100%;
+  margin:20px auto;
+  display:block;
+}
+
+.product-page h1{
+  margin-top:0;
 }
 
 .button{
-display:inline-block;
-padding:12px 24px;
-background:#2b5a7a;
-color:white;
-text-decoration:none;
-border-radius:4px;
-margin-top:30px;
+  display:inline-block;
+  padding:15px 28px;
+  background:#2b5a7a;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+  transition:all .2s ease;
 }
 
 .button:hover{
-background:#1f4a63;
+  background:#1f4a63;
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:25px;
 }
 
 </style>
@@ -49,19 +98,53 @@ background:#1f4a63;
 
 <body>
 
-<div class="container">
+<header>
+
+<div class="nav">
+
+<div class="logo">
+<a href="index.html"><img src="AgriTech_Logo_vFINAL SVG.svg"></a>
+</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="index.html#products">Products</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+
+<section class="section">
+
+<div class="product-page">
 
 <h1>RCP-5 Cover Crop Crimper</h1>
 
-<img src="RCP-5 (A).png">
+<img src="RCP-5 (A).png" alt="RCP-5">
 
 <p>
-The RCP-5 is a compact 5-foot 3-point mounted cover crop crimper designed for smaller tractors and smaller operations.
+The RCP-5 is a compact 5-foot 3-point mounted cover crop crimper designed for
+smaller tractors and operations. Built with heavy-duty steel construction,
+it provides reliable termination of cover crops while maintaining a simple,
+durable design.
 </p>
+
+<br>
 
 <a class="button" href="index.html#products">Back to Products</a>
 
 </div>
+
+</section>
+
+
+<footer>
+© 2026 AgriTech Manufacturing
+</footer>
 
 </body>
 </html>
