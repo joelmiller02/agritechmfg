@@ -245,18 +245,22 @@ footer{
 
 @media (max-width: 768px) {
 
+  /* ===== NAV & LOGO FIX ===== */
   .nav{
-    justify-content:center;
-  }
-
-  .nav a{
-    margin:5px 10px;
-    font-size:1rem;
+    justify-content: space-between; /* keep links spread */
+    flex-wrap: nowrap; /* force single line */
+    overflow-x:auto; /* allow horizontal scroll if needed */
   }
 
   .logo img{
-    height:80px;
-    margin-bottom:10px;
+    height:75px; /* slightly smaller for mobile */
+    margin-bottom:0;
+  }
+
+  .nav a{
+    margin:0 10px;
+    font-size:1rem;
+    white-space:nowrap; /* prevent text wrapping */
   }
 
   .hero h1{
@@ -307,7 +311,6 @@ footer{
   }
 
 }
-
 </style>
 
 </head>
