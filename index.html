@@ -65,12 +65,20 @@ header{
   background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
               url("CoverCrop1.jpeg") center/cover no-repeat;
   display:flex;
-  flex-direction:column; /* stack items vertically */
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+  flex-direction: column; /* stack h1 and p vertically */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   color:white;
-  row-gap:15px; /* vertical spacing between texts */
+  gap:15px; /* space between h1 and p */
+  padding: 10px;
+}
+
+.hero-text-bg {
+  background: rgba(0,0,0,0.5); /* semi-transparent black */
+  padding: 8px 12px;
+  border-radius: 20px; /* increased corner radius */
+  display: inline-block; /* hug the text tightly */
 }
 
 .hero h1{
@@ -78,15 +86,7 @@ header{
 }
 
 .hero p{
-  font-size:2rem; /* doubled size of subtitle */
-}
-
-/* Background for hero texts */
-.hero-text-bg {
-  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-  padding: 8px 12px;
-  border-radius: 16px; /* increased corner radius */
-  display: inline-block;
+  font-size:2rem; /* doubled subtitle size */
 }
 
 .section{
@@ -154,7 +154,7 @@ header{
 .card h3{
   color:#cc961d;   
   font-size:1.5rem; 
-  font-weight:bold; /* bold */
+  font-weight:bold;
 }
 
 .card p{
@@ -267,10 +267,8 @@ footer{
 <a id="top"></a>
 
 <section class="hero">
-<div>
-<h1 class="hero-text-bg">Built for Modern Agriculture</h1>
-<p class="hero-text-bg">Precision manufacturing for high-performance ag equipment</p>
-</div>
+  <h1 class="hero-text-bg">Built for Modern Agriculture</h1>
+  <p class="hero-text-bg">Precision manufacturing for high-performance ag equipment.</p>
 </section>
 
 <div class="products-header-bar">
