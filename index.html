@@ -75,6 +75,10 @@ header{
   font-size:96px;
 }
 
+.hero p{
+  font-size:2rem; /* doubled size of subtitle */
+}
+
 .section{
   max-width:1100px;
   margin:auto;
@@ -83,11 +87,12 @@ header{
   overflow-wrap: break-word;
 }
 
+/* Add space between hero and products bar */
 .products-header-bar{
   max-width:1100px;
   background:#ccc;
   border-radius:12px;
-  margin:20px auto 10px auto;
+  margin:1in auto 10px auto; /* 1" space above */
   padding:25px 20px;
   text-align:center;
 }
@@ -127,16 +132,21 @@ header{
   flex-grow:1;
   padding:15px;
   align-items:center;
+  justify-content:space-between; /* center description vertically */
+  min-height:120px; /* ensures spacing between name and button */
 }
 
-/* Updated product name style */
+/* Product names bold and gold */
 .card h3{
-  color:#cc961d;   /* changed from #fff to goldish color */
-  font-size:1.5rem; /* increased 1.5x */
+  color:#cc961d;   
+  font-size:1.5rem; 
+  font-weight:bold; /* bold */
 }
 
 .card p{
   color:#eee;
+  text-align:center;
+  margin:15px 0; /* space above/below description */
 }
 
 .button{
