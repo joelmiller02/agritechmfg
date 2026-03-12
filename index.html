@@ -65,7 +65,7 @@ header{
   background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
               url("CoverCrop1.jpeg") center/cover no-repeat;
   display:flex;
-  flex-direction: column; /* stack h1 and p vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -74,10 +74,10 @@ header{
 }
 
 .hero-text-bg {
-  background: rgba(0,0,0,0.5); /* semi-transparent black */
+  background: rgba(0,0,0,0.5);
   padding: 8px 12px;
-  border-radius: 20px; /* increased corner radius */
-  display: inline-block; /* hug the text tightly */
+  border-radius: 20px;
+  display: inline-block;
 }
 
 .hero h1{
@@ -85,8 +85,8 @@ header{
 }
 
 .hero p{
-  font-size:2rem; /* doubled subtitle size */
-  margin-top:0.25in; /* added precise spacing below headline */
+  font-size:2rem;
+  margin-top:0.25in;
 }
 
 .section{
@@ -97,20 +97,19 @@ header{
   overflow-wrap: break-word;
 }
 
-/* Add space between hero and products bar */
 .products-header-bar{
   max-width:1100px;
   background:#ccc;
   border-radius:12px;
-  margin:1in auto 10px auto; /* 1" space above */
+  margin:1in auto 10px auto;
   padding:25px 20px;
   text-align:center;
 }
 
 .products-header-bar h2 {
-  font-size: 3rem; /* double the size */
+  font-size: 3rem;
 }
-  
+
 .products-container{
   max-width:1100px;
   margin:auto;
@@ -146,11 +145,10 @@ header{
   flex-grow:1;
   padding:15px;
   align-items:center;
-  justify-content:space-between; /* center description vertically */
-  min-height:120px; /* ensures spacing between name and button */
+  justify-content:space-between;
+  min-height:120px;
 }
 
-/* Product names bold and gold */
 .card h3{
   color:#cc961d;   
   font-size:1.5rem; 
@@ -160,7 +158,7 @@ header{
 .card p{
   color:#eee;
   text-align:center;
-  margin:15px 0; /* space above/below description */
+  margin:15px 0;
 }
 
 .button{
@@ -197,8 +195,6 @@ header{
   margin-bottom:0.5in;
 }
 
-/* CONTACT ROW */
-
 .contact-row{
   display:flex;
   align-items:center;
@@ -207,7 +203,7 @@ header{
   font-size:18px;
   justify-content:flex-start;
   padding-left:2in;
-  flex-wrap:wrap; /* allow wrapping on small screens */
+  flex-wrap:wrap;
 }
 
 .contact-row svg{
@@ -240,36 +236,39 @@ footer{
   padding:25px;
 }
 
+/* ===== SCROLL MARGIN FIX FOR STICKY HEADER ===== */
+#products, #about, #contact {
+  scroll-margin-top:140px; /* sticky header height */
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 
 @media (max-width: 768px) {
 
-  /* Logo centered and nav below */
   .nav{
-    flex-direction: column; /* stack logo + nav links */
+    flex-direction: column;
     align-items: center;
   }
 
   .logo img{
-    height:75px; /* smaller for mobile */
-    margin-bottom:10px; /* space below logo */
+    height:75px;
+    margin-bottom:10px;
   }
 
   .nav > div{
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    overflow-x:auto; /* keep all buttons in one row */
+    overflow-x:auto;
     width: 100%;
   }
 
   .nav a{
     margin:0 10px;
     font-size:1rem;
-    white-space:nowrap; /* prevent wrapping */
+    white-space:nowrap;
   }
 
-  /* Hero and products adjustments */
   .hero h1{
     font-size:36px;
   }
@@ -284,7 +283,7 @@ footer{
   }
 
   .products{
-    grid-template-columns:1fr; /* stack cards vertically */
+    grid-template-columns:1fr;
     gap:15px;
   }
 
@@ -329,7 +328,7 @@ footer{
 <div class="nav">
 
 <div class="logo">
-<a href="#top"><img src="AgriTech_Logo.png"></a>
+<a href="#top"> <img src="AgriTech_Logo.png"> </a>
 </div>
 
 <div>
@@ -414,7 +413,6 @@ Interested in one of our products or have a design idea? Please email us through
 <section class="section about" id="contact">
 <h2>Contact</h2>
 
-<!-- Email Row -->
 <div class="contact-row">
   <svg xmlns="http://www.w3.org/2000/svg" fill="#0072C6" viewBox="0 0 24 24">
     <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 2v3.88l-7.5 4.72-7.5-4.72V6h15zM2 18V9.12l7.5 4.72 7.5-4.72L22 9.88V18H2z"/>
@@ -422,7 +420,6 @@ Interested in one of our products or have a design idea? Please email us through
   <span>Email: <a href="mailto:sales@agritechmfg.com">sales@agritechmfg.com</a></span>
 </div>
 
-<!-- LinkedIn Row -->
 <div class="contact-row">
   <svg xmlns="http://www.w3.org/2000/svg" fill="#0A66C2" viewBox="0 0 24 24">
     <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.22 8h4.52v14H.22V8zm7.56 0h4.33v1.92h.06c.6-1.14 2.07-2.34 4.27-2.34 4.57 0 5.41 3.01 5.41 6.93V22h-4.51v-6.69c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V22H7.78V8z"/>
@@ -448,22 +445,15 @@ const navLinks = {
 const sections = document.querySelectorAll("section, #top");
 
 const observer = new IntersectionObserver(entries => {
-
   entries.forEach(entry => {
-
     if(entry.isIntersecting){
-
       Object.values(navLinks).forEach(link => link.classList.remove("active"));
-
       if(entry.target.id === "products") navLinks.products.classList.add("active");
       if(entry.target.id === "about") navLinks.about.classList.add("active");
       if(entry.target.id === "contact") navLinks.contact.classList.add("active");
       if(entry.target.id === "top" || entry.target.classList.contains("hero")) navLinks.top.classList.add("active");
-
     }
-
   });
-
 },{
   threshold:0.5
 });
