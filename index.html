@@ -35,7 +35,6 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:2px 20px;
-  flex-wrap:wrap; /* allow wrapping on small screens */
 }
 
 .logo img{
@@ -245,24 +244,32 @@ footer{
 
 @media (max-width: 768px) {
 
-  /* ===== NAV & LOGO FIX ===== */
+  /* Logo centered and nav below */
   .nav{
-    justify-content: space-between; /* keep links spread */
-    flex-wrap: nowrap; /* force single line */
-    overflow-x:auto; /* allow horizontal scroll if needed */
+    flex-direction: column; /* stack logo + nav links */
+    align-items: center;
   }
 
   .logo img{
-    height:75px; /* slightly smaller for mobile */
-    margin-bottom:0;
+    height:75px; /* smaller for mobile */
+    margin-bottom:10px; /* space below logo */
+  }
+
+  .nav > div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x:auto; /* keep all buttons in one row */
+    width: 100%;
   }
 
   .nav a{
     margin:0 10px;
     font-size:1rem;
-    white-space:nowrap; /* prevent text wrapping */
+    white-space:nowrap; /* prevent wrapping */
   }
 
+  /* Hero and products adjustments */
   .hero h1{
     font-size:36px;
   }
