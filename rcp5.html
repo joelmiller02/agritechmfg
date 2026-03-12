@@ -82,8 +82,6 @@ header{
   display:block;
 }
 
-/* arrows */
-
 .slide-arrow{
   position:absolute;
   top:50%;
@@ -112,6 +110,33 @@ header{
 
 .product-page h1{
   margin-top:0;
+}
+
+/* FEATURES */
+
+.features-container{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  margin:25px auto 0 auto;
+  max-width:400px;
+}
+
+.features-title{
+  font-size:1.8rem;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.features-list{
+  text-align:left;
+  font-size:1.1rem;
+  margin:0;
+  padding-left:40px; /* increased to equal about one tab */
+}
+
+.features-list li{
+  margin:8px 0;
 }
 
 .button{
@@ -185,6 +210,19 @@ The RCP-5 is a compact 5-foot 3-point mounted cover crop crimper designed specif
 Built with heavy-duty steel construction, it provides reliable termination of cover crops while maintaining a simple, durable design.
 </p>
 
+<div class="features-container">
+
+<div class="features-title">Features:</div>
+
+<ul class="features-list">
+<li>5FT Chevron Pattern Drum</li>
+<li>310LBS per Foot Weight (Including Water)</li>
+<li>6" Square Tube Welded Frame</li>
+<li>Powder Coated Finish</li>
+</ul>
+
+</div>
+
 <br>
 
 <a class="button" href="index.html#products">Back to Products</a>
@@ -201,8 +239,6 @@ Built with heavy-duty steel construction, it provides reliable termination of co
 
 <script>
 
-/* Highlight correct nav button based on where the link goes */
-
 const navLinks = document.querySelectorAll(".nav a");
 
 navLinks.forEach(link => {
@@ -217,12 +253,8 @@ navLinks.forEach(link => {
 
 });
 
-/* Default highlight Products since this page is a product page */
-
 document.getElementById("nav-products").classList.add("active");
 
-
-/* SLIDESHOW */
 
 const images = [
 "RCP-5 (A).png",
