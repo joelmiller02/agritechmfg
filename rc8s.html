@@ -171,6 +171,35 @@ footer{
   padding:25px;
 }
 
+/* ===== MOBILE RESPONSIVE HEADER ===== */
+@media (max-width: 768px) {
+
+  /* Logo centered and nav below */
+  .nav{
+    flex-direction: column; /* stack logo + nav links */
+    align-items: center;
+  }
+
+  .logo img{
+    height:75px; /* smaller for mobile */
+    margin-bottom:10px; /* space below logo */
+  }
+
+  .nav > div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x:auto; /* keep all buttons in one row */
+    width: 100%;
+  }
+
+  .nav a{
+    margin:0 10px;
+    font-size:1rem;
+    white-space:nowrap; /* prevent wrapping */
+  }
+}
+
 </style>
 
 </head>
@@ -207,14 +236,14 @@ footer{
 
 <div class="slide-arrow arrow-left" onclick="changeSlide(-1)">&#10094;</div>
 
-<img id="product-slide" src="RCP-5 (A).png" alt="RCP-5">
+<img id="product-slide" src="RC-8S (A).png" alt="RC-8S">
 
 <div class="slide-arrow arrow-right" onclick="changeSlide(1)">&#10095;</div>
 
 </div>
 
 <p>
-The RC-8S is a medium sized 8FT, pull behind cover crop crimper designed a range of cover crop widths. It features an adjustable offset tongue to increase usage while keeping the tractor centered in the row.
+The RC-8S is a medium sized 8FT, pull behind cover crop crimper designed for a range of cover crop widths. It features an adjustable offset tongue to increase usage while keeping the tractor centered in the row.
 Built with heavy-duty steel construction, it provides reliable termination of cover crops and a high weight-to-width ratio.
 </p>
 
