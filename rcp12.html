@@ -79,15 +79,11 @@ header{
   text-align:center;
 }
 
-/* DESCRIPTION TEXT FIX */
-
 .product-page p{
   text-align:left;
   padding-left:0.25in;
   padding-right:0.25in;
 }
-
-/* SLIDESHOW */
 
 .slideshow-container{
   position:relative;
@@ -129,8 +125,6 @@ header{
 .product-page h1{
   margin-top:0;
 }
-
-/* FEATURES */
 
 .features-container{
   display:flex;
@@ -181,32 +175,30 @@ footer{
   padding:25px;
 }
 
-/* ===== MOBILE RESPONSIVE HEADER ===== */
 @media (max-width: 768px) {
 
-  /* Logo centered and nav below */
   .nav{
-    flex-direction: column; /* stack logo + nav links */
+    flex-direction: column;
     align-items: center;
   }
 
   .logo img{
-    height:75px; /* smaller for mobile */
-    margin-bottom:10px; /* space below logo */
+    height:75px;
+    margin-bottom:10px;
   }
 
   .nav > div{
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    overflow-x:auto; /* keep all buttons in one row */
+    overflow-x:auto;
     width: 100%;
   }
 
   .nav a{
     margin:0 10px;
     font-size:1rem;
-    white-space:nowrap; /* prevent wrapping */
+    white-space:nowrap;
   }
 }
 
@@ -221,14 +213,16 @@ footer{
 <div class="nav">
 
 <div class="logo">
-<a href="index.html"><img src="AgriTech_Logo.png"></a>
+<!-- CHANGE 1 (Line 151) -->
+<a href="/"><img src="AgriTech_Logo.png"></a>
 </div>
 
 <div>
-<a href="index.html" id="nav-home">Home</a>
-<a href="index.html#products" id="nav-products">Products</a>
-<a href="index.html#about" id="nav-about">About</a>
-<a href="index.html#contact" id="nav-contact">Contact</a>
+<!-- CHANGE 2 (Lines 155–158) -->
+<a href="/" id="nav-home">Home</a>
+<a href="/#products" id="nav-products">Products</a>
+<a href="/#about" id="nav-about">About</a>
+<a href="/#contact" id="nav-contact">Contact</a>
 </div>
 
 </div>
@@ -273,7 +267,8 @@ Built with heavy-duty steel construction, it provides reliable termination of co
 
 <br>
 
-<a class="button" href="index.html#products">Back to Products</a>
+<!-- CHANGE 3 (Line 227) -->
+<a class="button" href="/#products">Back to Products</a>
 
 </div>
 
