@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AgriTech Manufacturing</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FC606X84X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2FC606X84X');
+</script>
+  
+<style>
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#333;
+  background:#222;
+}
+
+header{
+  background:#222;
+  border-bottom:1px solid #111;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:2px 20px;
+}
+
+.logo img{
+  height:125px;
+}
+
+.nav a{
+  text-decoration:none;
+  margin-left:25px;
+  color:white;
+  font-weight:bold;
+  font-size:1.2rem;
+  padding:6px 10px;
+  border-radius:4px;
+  transition:all .2s ease;
+}
+
+.nav a:hover{
+  color:#cc961d;
+}
+
+.nav a.active{
+  color:#cc961d;
+}
+
+.hero{
+  height:50vh;
+  background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+              url("CoverCrop1.jpeg") center/cover no-repeat;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color:white;
+  padding: 10px;
+}
+
+.hero-text-bg {
+  background: rgba(0,0,0,0.5);
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.hero h1{
+  font-size:96px;
+}
+
+.hero p{
+  font-size:2rem;
+  margin-top:0.25in;
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+  word-wrap: break-word;   
+  overflow-wrap: break-word;
+}
+
+.products-header-bar{
+  max-width:1100px;
+  background:#ccc;
+  border-radius:12px;
+  margin:1in auto 10px auto;
+  padding:25px 20px;
+  text-align:center;
+}
+
+.products-header-bar h2 {
+  font-size: 3rem;
+}
+
+.products-container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.card{
+  border-radius:6px;
+  overflow:hidden;
+  background:#555;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  background:#fff;
+}
+
+.card-content{
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+  padding:15px;
+  align-items:center;
+  justify-content:space-between;
+  min-height:120px;
+}
+
+.card h3{
+  color:#cc961d;   
+  font-size:1.5rem; 
+  font-weight:bold;
+}
+
+.card p{
+  color:#eee;
+  text-align:center;
+  margin:15px 0;
+}
+
+.button{
+  display:inline-block;
+  padding:15px 28px;
+  background:#2b5a7a;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+  margin-top:auto;
+  font-weight:bold;
+  letter-spacing:.5px;
+  transition:all .2s ease;
+}
+
+.button:hover{
+  background:#1f4a63;
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+.button:active{
+  transform:translateY(1px);
+  box-shadow:none;
+}
+
+.about{
+  background:#ccc;
+  border-radius:12px;
+  padding:30px 20px;
+}
+
+#about{
+  margin-bottom:0.5in;
+}
+
+.contact-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+  font-size:18px;
+  justify-content:flex-start;
+  padding-left:2in;
+  flex-wrap:wrap;
+}
+
+.contact-row svg{
+  width:30px;  
+  height:20px;
+  flex-shrink:0;
+}
+
+.contact-row span {
+  display:flex;
+  align-items:center;
+  gap:5px;
+  min-width:250px; 
+}
+
+.contact-row a{
+  color:#2b5a7a;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.contact-row a:hover{
+  text-decoration:underline;
+}
+
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+/* ===== SCROLL MARGIN FIX FOR STICKY HEADER ===== */
+#products, #about, #contact {
+  scroll-margin-top:140px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+  .nav{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img{
+    height:75px;
+    margin-bottom:10px;
+  }
+
+  .nav > div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x:auto;
+    width: 100%;
+  }
+
+  .nav a{
+    margin:0 10px;
+    font-size:1rem;
+    white-space:nowrap;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:1.2rem;
+    margin-top:0.2in;
+  }
+
+  .products-header-bar h2{
+    font-size:2rem;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .card img{
+    height:180px;
+  }
+
+  .card h3{
+    font-size:1.2rem;
+  }
+
+  .card p{
+    font-size:1rem;
+  }
+
+  .button{
+    padding:10px 20px;
+    font-size:0.9rem;
+  }
+
+  .about{
+    padding:20px 15px;
+  }
+
+  .contact-row{
+    padding-left:0.25in;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+    font-size:16px;
+  }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+<img src="AgriTech_Logo.png" style="cursor:pointer" id="logo-home">
+</div>
+
+<div>
+<a href="#" id="nav-home">Home</a>
+<a href="#products" id="nav-products">Products</a>
+<a href="#about" id="nav-about">About</a>
+<a href="#contact" id="nav-contact">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+  <h1 class="hero-text-bg">Built for Regenerative Agriculture</h1>
+  <p class="hero-text-bg">Improve Your Soil Health with AgriTech Manufacturing Cover Crop Crimpers</p>
+</section>
+
+<div class="products-header-bar">
+<h2>Products</h2>
+</div>
+
+<section class="section" id="products">
+<div class="products-container">
+<div class="products">
+
+<div class="card">
+<img src="RCP-5 (A).png">
+<div class="card-content">
+<h3>RCP-5</h3>
+<p>Compact 5FT 3-Point Cover Crop Crimper</p>
+<a class="button" href="rcp5.html">Learn More</a>
+</div>
+</div>
+
+<div class="card">
+<img src="RCP-12 (A).png">
+<div class="card-content">
+<h3>RCP-12</h3>
+<p>12FT 3-Point Cover Crop Crimper</p>
+<a class="button" href="rcp12.html">Learn More</a>
+</div>
+</div>
+
+<div class="card">
+<img src="RCP-13F (F).png">
+<div class="card-content">
+<h3>RCP-13F</h3>
+<p>13FT 3-Point Cover Crop Crimper w/ Hydraulic Flex Wing</p>
+<a class="button" href="rcp13f.html">Learn More</a>
+</div>
+</div>
+
+<div class="card">
+<img src="RC-8S (A).png">
+<div class="card-content">
+<h3>RC-8S</h3>
+<p>8FT Pull Behind Cover Crop Crimper w/ 0-3FT Offset</p>
+<a class="button" href="rc8s.html">Learn More</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section about" id="about">
+<h2>About Us</h2>
+<p>
+Founded in 2025, AgriTech Manufacturing is a small manufacturing startup that fabricates custom built agricultural implements designed for durability and reliability. Specializing in cover crop crimpers, we strive to provide excellence through custom ag engineering design and fabrication.
+</p>
+<p>
+Interested in one of our products or have a design idea? Please email us through our contact page. We look forward to working with you!
+</p>
+</section>
+
+<section class="section about" id="contact">
+<h2>Contact</h2>
+
+<div class="contact-row">
+  <span><strong>AgriTech Manufacturing</strong></span>
+</div>
+
+<div class="contact-row">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="#0072C6" viewBox="0 0 24 24">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+  </svg>
+  <span>Modesto, CA</span>
+</div>
+
+<div class="contact-row">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="#0072C6" viewBox="0 0 24 24">
+    <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 2v3.88l-7.5 4.72-7.5-4.72V6h15zM2 18V9.12l7.5 4.72 7.5-4.72L22 9.88V18H2z"/>
+  </svg>
+  <span>Email: <a href="mailto:sales@agritechmfg.com">sales@agritechmfg.com</a></span>
+</div>
+
+<div class="contact-row">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="#0A66C2" viewBox="0 0 24 24">
+    <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.22 8h4.52v14H.22V8zm7.56 0h4.33v1.92h.06c.6-1.14 2.07-2.34 4.27-2.34 4.57 0 5.41 3.01 5.41 6.93V22h-4.51v-6.69c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V22H7.78V8z"/>
+  </svg>
+  <span>LinkedIn: <a href="https://www.linkedin.com/company/agritechmfg" target="_blank">AgriTech Manufacturing</a></span>
+</div>
+
+</section>
+
+<footer>
+© 2026 AgriTech Manufacturing
+</footer>
+
+<script>
+// Home button scrolls to very top
+document.getElementById("nav-home").addEventListener("click", e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Logo click also scrolls to top
+document.getElementById("logo-home").addEventListener("click", e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Intersection Observer for nav active state
+const navLinks = {
+  top: document.getElementById("nav-home"),
+  products: document.getElementById("nav-products"),
+  about: document.getElementById("nav-about"),
+  contact: document.getElementById("nav-contact")
+};
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      Object.values(navLinks).forEach(link => link.classList.remove("active"));
+      if(entry.target.id === "products") navLinks.products.classList.add("active");
+      if(entry.target.id === "about") navLinks.about.classList.add("active");
+      if(entry.target.id === "contact") navLinks.contact.classList.add("active");
+      if(entry.target.classList.contains("hero")) navLinks.top.classList.add("active");
+    }
+  });
+},{
+  threshold:0.5
+});
+
+sections.forEach(section => observer.observe(section));
+
+</script>
+
+</body>
+</html>
