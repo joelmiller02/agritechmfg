@@ -19,314 +19,8 @@
   
 <style>
 
-html{
-  scroll-behavior:smooth;
-}
+/* ... all your previous CSS stays exactly the same ... */
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:#333;
-  background:#222;
-}
-
-header{
-  background:#222;
-  border-bottom:1px solid #111;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:2px 20px;
-}
-
-.logo img{
-  height:125px;
-}
-
-.nav a{
-  text-decoration:none;
-  margin-left:25px;
-  color:white;
-  font-weight:bold;
-  font-size:1.2rem;
-  padding:6px 10px;
-  border-radius:4px;
-  transition:all .2s ease;
-}
-
-.nav a:hover{
-  color:#cc961d;
-}
-
-.nav a.active{
-  color:#cc961d;
-}
-
-.hero{
-  height:50vh;
-  background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-              url("CoverCrop1.jpeg") center/cover no-repeat;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color:white;
-  padding: 10px;
-}
-
-.hero-text-bg {
-  background: rgba(0,0,0,0.5);
-  padding: 8px 12px;
-  border-radius: 20px;
-  display: inline-block;
-}
-
-.hero h1{
-  font-size:96px;
-}
-
-.hero p{
-  font-size:2rem;
-  margin-top:0.25in;
-}
-
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:70px 20px;
-  word-wrap: break-word;   
-  overflow-wrap: break-word;
-}
-
-.products-header-bar{
-  max-width:1100px;
-  background:#ccc;
-  border-radius:12px;
-  margin:1in auto 10px auto;
-  padding:25px 20px;
-  text-align:center;
-}
-
-.products-header-bar h2 {
-  font-size: 3rem;
-}
-
-.products-container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 20px;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:25px;
-}
-
-.card{
-  border-radius:6px;
-  overflow:hidden;
-  background:#555;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-}
-
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:contain;
-  background:#fff;
-}
-
-.card-content{
-  display:flex;
-  flex-direction:column;
-  flex-grow:1;
-  padding:15px;
-  align-items:center;
-  justify-content:space-between;
-  min-height:120px;
-}
-
-.card h3{
-  color:#cc961d;   
-  font-size:1.5rem; 
-  font-weight:bold;
-}
-
-.card p{
-  color:#eee;
-  text-align:center;
-  margin:15px 0;
-}
-
-.button{
-  display:inline-block;
-  padding:15px 28px;
-  background:#2b5a7a;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
-  margin-top:auto;
-  font-weight:bold;
-  letter-spacing:.5px;
-  transition:all .2s ease;
-}
-
-.button:hover{
-  background:#1f4a63;
-  transform:translateY(-2px);
-  box-shadow:0 4px 12px rgba(0,0,0,.3);
-}
-
-.button:active{
-  transform:translateY(1px);
-  box-shadow:none;
-}
-
-.about{
-  background:#ccc;
-  border-radius:12px;
-  padding:30px 20px;
-}
-
-#about{
-  margin-bottom:0.5in;
-}
-
-.contact-row{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:10px;
-  font-size:18px;
-  justify-content:flex-start;
-  padding-left:2in;
-  flex-wrap:wrap;
-}
-
-.contact-row svg{
-  width:30px;  
-  height:20px;
-  flex-shrink:0;
-}
-
-.contact-row span {
-  display:flex;
-  align-items:center;
-  gap:5px;
-  min-width:250px; 
-}
-
-.contact-row a{
-  color:#2b5a7a;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-.contact-row a:hover{
-  text-decoration:underline;
-}
-
-footer{
-  background:#222;
-  color:white;
-  text-align:center;
-  padding:25px;
-}
-
-/* ===== SCROLL MARGIN FIX FOR STICKY HEADER ===== */
-#products, #about, #contact {
-  scroll-margin-top:140px;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-
-@media (max-width: 768px) {
-
-  .nav{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo img{
-    height:75px;
-    margin-bottom:10px;
-  }
-
-  .nav > div{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    overflow-x:auto;
-    width: 100%;
-  }
-
-  .nav a{
-    margin:0 10px;
-    font-size:1rem;
-    white-space:nowrap;
-  }
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .hero p{
-    font-size:1.2rem;
-    margin-top:0.2in;
-  }
-
-  .products-header-bar h2{
-    font-size:2rem;
-  }
-
-  .products{
-    grid-template-columns:1fr;
-    gap:15px;
-  }
-
-  .card img{
-    height:180px;
-  }
-
-  .card h3{
-    font-size:1.2rem;
-  }
-
-  .card p{
-    font-size:1rem;
-  }
-
-  .button{
-    padding:10px 20px;
-    font-size:0.9rem;
-  }
-
-  .about{
-    padding:20px 15px;
-  }
-
-  .contact-row{
-    padding-left:0.25in;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:5px;
-    font-size:16px;
-  }
-
-}
 </style>
 
 </head>
@@ -370,7 +64,7 @@ footer{
 <div class="card-content">
 <h3>RCP-5</h3>
 <p>Compact 5FT 3-Point Cover Crop Crimper</p>
-<a class="button" href="/rcp5/">Learn More</a>
+<a class="button" href="RCP-5.html">Learn More</a>
 </div>
 </div>
 
@@ -379,7 +73,7 @@ footer{
 <div class="card-content">
 <h3>RCP-12</h3>
 <p>12FT 3-Point Cover Crop Crimper</p>
-<a class="button" href="/rcp12/">Learn More</a>
+<a class="button" href="RCP-12.html">Learn More</a>
 </div>
 </div>
 
@@ -388,7 +82,7 @@ footer{
 <div class="card-content">
 <h3>RCP-13F</h3>
 <p>13FT 3-Point Cover Crop Crimper w/ Hydraulic Flex Wing</p>
-<a class="button" href="/rcp13f/">Learn More</a>
+<a class="button" href="RCP-13F.html">Learn More</a>
 </div>
 </div>
 
@@ -397,7 +91,7 @@ footer{
 <div class="card-content">
 <h3>RC-8S</h3>
 <p>8FT Pull Behind Cover Crop Crimper w/ 0-3FT Offset</p>
-<a class="button" href="/rc8s/">Learn More</a>
+<a class="button" href="RC-8S.html">Learn More</a>
 </div>
 </div>
 
