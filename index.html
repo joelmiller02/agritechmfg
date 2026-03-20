@@ -81,6 +81,8 @@ header{
   text-align: center;
   color:white;
   padding: 10px;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .hero-text-bg {
@@ -91,12 +93,15 @@ header{
 }
 
 .hero h1{
-  font-size:96px;
+  font-size: clamp(2.5rem, 8vw, 96px);
+  margin: 0;
+  line-height: 1.1;
 }
 
 .hero p{
-  font-size:2rem;
-  margin-top:0.25in;
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin:0;
+  line-height: 1.2;
 }
 
 .section{
