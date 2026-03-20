@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>RCP-13F | AgriTech Manufacturing</title>
+<title>Fabrication | AgriTech Manufacturing</title>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FC606X84X"></script>
@@ -16,7 +16,7 @@
 
   gtag('config', 'G-2FC606X84X');
 </script>
-
+  
 <style>
 
 body{
@@ -181,7 +181,7 @@ footer{
   padding:25px;
 }
 
-/* ===== MOBILE RESPONSIVE HEADER ===== */
+/* ===== MOBILE RESPONSIVE HEADER & FOOTER ===== */
 @media (max-width: 768px) {
 
   /* Logo centered and nav below */
@@ -235,44 +235,15 @@ footer{
 
 </header>
 
-
 <section class="section">
 
 <div class="product-page">
 
-<h1>RCP-13F Cover Crop Crimper</h1>
-
-<div class="slideshow-container">
-
-<div class="slide-arrow arrow-left" onclick="changeSlide(-1)">&#10094;</div>
-
-<img id="product-slide" src="Photos/RCP-13F (F).png" alt="RCP-13F">
-
-<div class="slide-arrow arrow-right" onclick="changeSlide(1)">&#10095;</div>
-
-</div>
+<h1>Fabrication</h1>
 
 <p>
-The RCP-13F is a robust 13-foot 3-point mounted cover crop crimper designed specifically for orchards with uneven surfaces. Hydraulic lifting wings with 4 flex points allow the drum to stay in contact with the ground at all times.
-Built with heavy-duty steel construction, it provides reliable termination of cover crops while maintaining a narrow transport width.
+Content coming soon...
 </p>
-
-<div class="features-container">
-
-<div class="features-title">Features:</div>
-
-<ul class="features-list">
-<li>6FT Chevron Pattern Main Drum</li>
-<li>3-1/2FT Chevron Pattern Wing Drums</li>
-<li>350LBS Per Foot Weight (Including Water)</li>
-<li>Hydraulic Lifting Wings</li>
-<li>4 Flex Points for +-6IN Wing Flex</li>
-<li>Category 2 3-Point Connection</li>
-<li>6" Square Tube Welded Frame</li>
-<li>Powder Coated Finish</li>
-</ul>
-
-</div>
 
 <br>
 
@@ -282,11 +253,9 @@ Built with heavy-duty steel construction, it provides reliable termination of co
 
 </section>
 
-
 <footer>
 © 2026 AgriTech Manufacturing
 </footer>
-
 
 <script>
 
@@ -303,36 +272,6 @@ navLinks.forEach(link => {
   });
 
 });
-
-document.getElementById("nav-products").classList.add("active");
-
-
-const images = [
-"RCP-13F (F).png",
-"RCP-13F (G).png",
-"RCP-13F (H).png",
-"RCP-13F (I).png",
-"RCP-13F (J).png"
-];
-
-let currentSlide = 0;
-
-function changeSlide(direction){
-
-  currentSlide += direction;
-
-  if(currentSlide >= images.length){
-    currentSlide = 0;
-  }
-
-  if(currentSlide < 0){
-    currentSlide = images.length - 1;
-  }
-
-  document.getElementById("product-slide").src = images[currentSlide];
-
-}
-
 </script>
 
 </body>
