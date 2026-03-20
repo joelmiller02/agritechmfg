@@ -248,7 +248,44 @@ footer{
   background:#222;
   color:white;
   text-align:center;
-  padding:25px;
+  padding:10px 25px 40px 25px;
+}
+
+.footer-nav{
+  display:flex;
+  justify-content:center;
+  gap:0;
+  margin-top:3px;
+  margin-bottom:8px;
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  margin-bottom:1px;
+}
+
+.footer-logo img{
+  height:94px;
+  cursor:pointer;
+}
+
+.footer-nav a{
+  text-decoration:none;
+  margin-left:15px;
+  color:white;
+  font-weight:bold;
+  font-size:1.2rem;
+  padding:6px 10px;
+  border-radius:4px;
+  transition:all .2s ease;
+}
+
+.footer-nav a:hover{
+  color:#cc961d;
+}
+
+.footer-nav a.active{
+  color:#cc961d;
 }
 
 /* ===== SCROLL MARGIN FIX FOR STICKY HEADER ===== */
@@ -452,6 +489,16 @@ Interested in one of our products or have a design idea? Please email us through
 </section>
 
 <footer>
+<div class="footer-logo">
+<img src="Photos/AgriTech_Logo.png" id="logo-footer" style="cursor:pointer">
+</div>
+<div class="footer-nav">
+<a href="#" id="footer-nav-home">Home</a>
+<a href="#products" id="footer-nav-products">Products</a>
+<a href="fabrication" id="footer-nav-fabrication">Fabrication</a>
+<a href="#about" id="footer-nav-about">About</a>
+<a href="#contact" id="footer-nav-contact">Contact</a>
+</div>
 © 2026 AgriTech Manufacturing
 </footer>
 
@@ -462,8 +509,20 @@ document.getElementById("nav-home").addEventListener("click", e => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// Footer home button also scrolls to top
+document.getElementById("footer-nav-home").addEventListener("click", e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Logo click also scrolls to top
 document.getElementById("logo-home").addEventListener("click", e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Footer logo click also scrolls to top
+document.getElementById("logo-footer").addEventListener("click", e => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -477,15 +536,41 @@ const navLinks = {
   fabrication: document.getElementById("nav-fabrication")
 };
 
+const footerNavLinks = {
+  top: document.getElementById("footer-nav-home"),
+  products: document.getElementById("footer-nav-products"),
+  about: document.getElementById("footer-nav-about"),
+  contact: document.getElementById("footer-nav-contact"),
+  fabrication: document.getElementById("footer-nav-fabrication")
+};
+
 let userClickedLink = false;
 let clickTimeout;
 
-// Add click handlers to all nav links
+// Add click handlers to all header nav links
 Object.values(navLinks).forEach(link => {
   link.addEventListener("click", function() {
     userClickedLink = true;
     Object.values(navLinks).forEach(l => l.classList.remove("active"));
+    Object.values(footerNavLinks).forEach(l => l.classList.remove("active"));
     this.classList.add("active");
+    footerNavLinks[Object.keys(navLinks).find(key => navLinks[key] === this)].classList.add("active");
+    
+    clearTimeout(clickTimeout);
+    clickTimeout = setTimeout(() => {
+      userClickedLink = false;
+    }, 2000);
+  });
+});
+
+// Add click handlers to all footer nav links
+Object.values(footerNavLinks).forEach(link => {
+  link.addEventListener("click", function() {
+    userClickedLink = true;
+    Object.values(navLinks).forEach(l => l.classList.remove("active"));
+    Object.values(footerNavLinks).forEach(l => l.classList.remove("active"));
+    this.classList.add("active");
+    navLinks[Object.keys(footerNavLinks).find(key => footerNavLinks[key] === this)].classList.add("active");
     
     clearTimeout(clickTimeout);
     clickTimeout = setTimeout(() => {
@@ -502,10 +587,23 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       Object.values(navLinks).forEach(link => link.classList.remove("active"));
-      if(entry.target.id === "products") navLinks.products.classList.add("active");
-      if(entry.target.id === "about") navLinks.about.classList.add("active");
-      if(entry.target.id === "contact") navLinks.contact.classList.add("active");
-      if(entry.target.classList.contains("hero")) navLinks.top.classList.add("active");
+      Object.values(footerNavLinks).forEach(link => link.classList.remove("active"));
+      if(entry.target.id === "products") {
+        navLinks.products.classList.add("active");
+        footerNavLinks.products.classList.add("active");
+      }
+      if(entry.target.id === "about") {
+        navLinks.about.classList.add("active");
+        footerNavLinks.about.classList.add("active");
+      }
+      if(entry.target.id === "contact") {
+        navLinks.contact.classList.add("active");
+        footerNavLinks.contact.classList.add("active");
+      }
+      if(entry.target.classList.contains("hero")) {
+        navLinks.top.classList.add("active");
+        footerNavLinks.top.classList.add("active");
+      }
     }
   });
 },{
