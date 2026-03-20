@@ -242,6 +242,16 @@ footer{
 
 <h1>Contract Fabrication</h1>
 
+<div class="slideshow-container">
+
+<div class="slide-arrow arrow-left" onclick="changeSlide(-1)">&#10094;</div>
+
+<img id="product-slide" src="Photos/Fab (A).JPEG" alt="Fabrication">
+
+<div class="slide-arrow arrow-right" onclick="changeSlide(1)">&#10095;</div>
+
+</div>
+
 <p>
 Have a fabrication project in mind? AgriTech Manufacturing is ready to bring your ideas to life.
 From CAD designs to field-ready prototypes, we have the expertise to turn your vision into reality.
@@ -277,6 +287,34 @@ navLinks.forEach(link => {
 });
 
 document.getElementById("nav-fabrication").classList.add("active");
+
+
+const images = [
+"Sprayer (A).JPEG",
+"Sprayer (B).JPEG",
+"Print (A).JPEG",
+"Print (B).JPEG",
+"Fab (A).JPEG",
+];
+
+let currentSlide = 0;
+
+function changeSlide(direction){
+
+  currentSlide += direction;
+
+  if(currentSlide >= images.length){
+    currentSlide = 0;
+  }
+
+  if(currentSlide < 0){
+    currentSlide = images.length - 1;
+  }
+
+  document.getElementById("product-slide").src = "Photos/" + images[currentSlide];
+
+}
+
 </script>
 
 </body>
