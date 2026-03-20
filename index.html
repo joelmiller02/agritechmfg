@@ -473,12 +473,32 @@ const navLinks = {
   top: document.getElementById("nav-home"),
   products: document.getElementById("nav-products"),
   about: document.getElementById("nav-about"),
-  contact: document.getElementById("nav-contact")
+  contact: document.getElementById("nav-contact"),
+  fabrication: document.getElementById("nav-fabrication")
 };
+
+let userClickedLink = false;
+let clickTimeout;
+
+// Add click handlers to all nav links
+Object.values(navLinks).forEach(link => {
+  link.addEventListener("click", function() {
+    userClickedLink = true;
+    Object.values(navLinks).forEach(l => l.classList.remove("active"));
+    this.classList.add("active");
+    
+    clearTimeout(clickTimeout);
+    clickTimeout = setTimeout(() => {
+      userClickedLink = false;
+    }, 2000);
+  });
+});
 
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
+  if(userClickedLink) return;
+  
   entries.forEach(entry => {
     if(entry.isIntersecting){
       Object.values(navLinks).forEach(link => link.classList.remove("active"));
