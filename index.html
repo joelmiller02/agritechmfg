@@ -292,6 +292,10 @@ footer{
   color:#cc961d;
 }
 
+.copyright{
+  font-size: clamp(0.65rem, 1.5vw, 1rem);
+}
+
 /* ===== SCROLL MARGIN FIX FOR STICKY HEADER ===== */
 #products, #about, #contact {
   scroll-margin-top:140px;
@@ -304,6 +308,7 @@ footer{
   .nav{
     flex-direction: column;
     align-items: center;
+    padding: 2px 10px;
   }
 
   .logo img{
@@ -314,15 +319,31 @@ footer{
   .nav > div{
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    overflow-x:auto;
+    flex-wrap: wrap;
+    gap: 5px;
     width: 100%;
   }
 
   .nav a{
-    margin:0 10px;
-    font-size:1rem;
-    white-space:nowrap;
+    margin: 0;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+
+  .footer-nav{
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .footer-nav a{
+    margin: 0;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    padding: 4px 8px;
+  }
+
+  footer{
+    padding: 10px 15px 30px 15px;
   }
 
   .hero h1{
@@ -370,6 +391,49 @@ footer{
     align-items:flex-start;
     gap:5px;
     font-size:16px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .nav{
+    padding: 2px 5px;
+  }
+
+  .logo img{
+    height: 60px;
+    margin-bottom: 8px;
+  }
+
+  .nav > div{
+    gap: 3px;
+  }
+
+  .nav a{
+    font-size: clamp(0.6rem, 1.5vw, 0.85rem);
+    padding: 3px 6px;
+  }
+
+  .footer-logo img{
+    height: 70px;
+  }
+
+  .footer-nav a{
+    font-size: clamp(0.6rem, 1.5vw, 0.85rem);
+    padding: 3px 6px;
+  }
+
+  .products-header-bar h2{
+    font-size: 1.5rem;
+  }
+
+  .hero h1{
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+
+  .hero p{
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   }
 
 }
@@ -503,7 +567,7 @@ Interested in one of our products or have a design idea? Please email us through
 <a href="#about" id="footer-nav-about">About</a>
 <a href="#contact" id="footer-nav-contact">Contact</a>
 </div>
-© 2026 AgriTech Manufacturing
+<span class="copyright">© 2026 AgriTech Manufacturing</span>
 </footer>
 
 <script>
